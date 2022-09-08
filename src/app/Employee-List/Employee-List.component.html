@@ -1,0 +1,37 @@
+<p routerLink='/employeelist'>
+</p>
+<div class="emdata">
+  <div class="heading" >
+    Employee List
+  </div>
+  <!-- <div class="count">
+    <h1>count:{{res.length}}</h1>
+  </div> -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">employee Id</th>
+        <th scope="col">name</th>
+        <th scope="col">email</th>
+        <th scope="col">phone number</th>
+        <th scope="col">course</th>
+        <th scope="col">action</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dt of res; index as i">
+        <td>{{dt.id}}</td>
+        <td>{{dt.name}}</td>
+        <td>{{dt.email}}</td>
+        <td>{{dt.phone}}</td>
+        <td>{{dt.course}}</td>
+        <td>
+          <button class="btn btn-primary me-3" (click)="edit(dt.id,i)">edit</button>
+          <button class="btn btn-primary" (click)="delete(dt.id)">delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

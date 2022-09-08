@@ -1,0 +1,52 @@
+<form class="container me-3"  #form="ngForm" (ngSubmit) ="submit(form)">
+  <div class="row mb-3 form-container">
+    <label class="col-sm-2 col-form-label">Employee Id</label>
+    <div class="col-sm-4">
+      <input type="number" class="form-control" id="inputEmail3" name="id" required ngModel [ngModel]= "Id" #id ="ngModel">
+      <small class="text-danger" *ngIf="!id.valid && id.touched">Please Enter EmployeeID</small>
+    </div>
+  </div>
+
+  <div class="row mb-3 form-container">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="inputEmail3" name="name" required [ngModel]= "userData.name" #name="ngModel">
+      <small class="text-danger" *ngIf="!name.valid && name.touched">Please Enter Name</small>
+    </div>
+  </div>
+
+  <div class="row mb-3 form-container">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-4">
+      <input type="email" class="form-control" id="inputEmail3" required  name="email" ngModel
+        #email="ngModel"[ngModel]="userData.email">
+      <small class="text-danger" *ngIf="!email.valid && email.touched">Please Enter Valid Email</small>
+    </div>
+  </div>
+  <div class="row mb-3 form-container">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">MobileNo</label>
+    <div class="col-sm-4">
+      <input type="number" class="form-control" id="inputPassword3" required name="phone" 
+      ngModel #phone="ngModel" [ngModel]="userData.phone">
+      <small class="text-danger" *ngIf="!phone.valid && phone.touched">Please Enter valid number</small>
+    </div>
+  </div>
+  <div class="row mb-3 form-container">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">course</label>
+    <div class="col-sm-4">
+      <select id="inputState" class="form-select" required name="course" ngModel #course="ngModel" [ngModel]="userData.course">
+        <option>angualr</option>
+        <option>java</option>
+        <option>react</option>
+        
+      </select>
+      <small class="text-danger" *ngIf="!course.valid && course.touched">Please Select Department</small>
+    </div>
+  </div>
+  
+  <button type="submit" class="btn btn-success" [disabled]= "!form.valid" >{{editMode? 'update':'save'}}</button>
+  <!-- </div> -->
+
+</form>
+
+<!-- Khushi@059 -->
